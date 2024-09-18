@@ -1,0 +1,20 @@
+<div class="converter animate-fade-in">
+  <div *ngIf="errorMessage" class="error-message animate-slide-in">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="!errorMessage">
+    <div class="currency-input animate-slide-in">
+      <input [(ngModel)]="amount1" (ngModelChange)="convert(1)" type="number" min="0">
+      <select [(ngModel)]="currency1" (ngModelChange)="convert(1)">
+        <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+      </select>
+    </div>
+    <div class="currency-input animate-slide-in">
+      <input [(ngModel)]="amount2" (ngModelChange)="convert(2)" type="number" min="0">
+      <select [(ngModel)]="currency2" (ngModelChange)="convert(1)">
+        <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<app-conversion-history [history]="conversionHistory"></app-conversion-history>

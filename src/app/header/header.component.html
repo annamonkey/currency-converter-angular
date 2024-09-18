@@ -1,0 +1,10 @@
+<header>
+  <h1>Конвертер валют</h1>
+  <div class="exchange-rates" *ngIf="usdRate && eurRate">
+    <p>USD: {{ usdRate | number:'1.2-2' }} UAH</p>
+    <p>EUR: {{ eurRate | number:'1.2-2' }} UAH</p>
+  </div>
+  <div class="info">
+    <p>Джерело: {{ source }} | Дата оновлення: {{ updateDate | date:'dd.MM.yyyy HH:mm' }}</p>
+  </div>
+</header>
